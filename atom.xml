@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smaxad47.github.io/"/>
-  <updated>2019-07-09T03:08:14.430Z</updated>
+  <updated>2019-07-09T03:19:22.258Z</updated>
   <id>https://smaxad47.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>Essential Phone OTA With ROOT</title>
     <link href="https://smaxad47.github.io/wiki/Android/Essential%20Phone%20OTA%20With%20ROOT/"/>
     <id>https://smaxad47.github.io/wiki/Android/Essential Phone OTA With ROOT/</id>
-    <published>2019-07-05T16:00:00.000Z</published>
-    <updated>2019-07-09T03:08:14.430Z</updated>
+    <published>2019-07-08T16:00:00.000Z</published>
+    <updated>2019-07-09T03:19:22.258Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Essential-Phone-OTA-With-ROOT"><a href="#Essential-Phone-OTA-With-ROOT" class="headerlink" title="Essential Phone OTA With ROOT"></a>Essential Phone OTA With ROOT</h1><h2 id="获取最新包"><a href="#获取最新包" class="headerlink" title="获取最新包"></a>获取最新包</h2><p><a href="https://www.essential.com/developer/current-builds" target="_blank" rel="noopener">获取最新的OTA包和FASTBOOT包</a><br>从FASTBOOT包中将BOOT取出，用Magisk给Boot打补丁<br>Or<br>从<a href="https://drive.google.com/drive/folders/1iayS6YHYZvqkD1Y8oYV3ewzW5aAPe8C2" target="_blank" rel="noopener">这里</a>下载最新的Boot.img，用Magisk给Boot.img打补丁</p><h2 id="OTA"><a href="#OTA" class="headerlink" title="OTA"></a>OTA</h2><p>线耍OTA包<br><code>adb reboot recovery</code>进入<strong>recovery</strong>,或关机后按住音量+BOOTLOADER再进<strong>recovery</strong>。选择<strong>Apply update from ADB</strong>，<code>adb sideload OTAupdate.zip</code>完成版本升级，此时应已经升级完成，未有ROOT</p><h2 id="ROOT"><a href="#ROOT" class="headerlink" title="ROOT"></a>ROOT</h2><p><code>adb reboot bootloader</code>将打好补丁的Boot.img刷入Boot分区<br><code>fastboot flash boot_a/b magisk_patched.img</code>，暂时没有找到好的方法可以查看活动插槽，可以使用<code>fastboot flash boot XXX</code>来报错，查看当前插槽</p><h2 id="打补丁"><a href="#打补丁" class="headerlink" title="打补丁"></a>打补丁</h2><p>将原厂镜像放入手机，用Magisk安装-&gt;选择修补一个文件。</p>]]></content>
     
@@ -44,6 +44,40 @@
       <category term="ota" scheme="https://smaxad47.github.io/tags/ota/"/>
     
       <category term="root" scheme="https://smaxad47.github.io/tags/root/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>暗影精灵2Pro无法充电</title>
+    <link href="https://smaxad47.github.io/wiki/PC/%E5%85%B6%E4%BB%96/%E6%9A%97%E5%BD%B1%E7%B2%BE%E7%81%B52Pro%E6%97%A0%E6%B3%95%E5%85%85%E7%94%B5/"/>
+    <id>https://smaxad47.github.io/wiki/PC/其他/暗影精灵2Pro无法充电/</id>
+    <published>2019-07-08T16:00:00.000Z</published>
+    <updated>2019-07-09T03:21:34.415Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="暗影精灵静电释放"><a href="#暗影精灵静电释放" class="headerlink" title="暗影精灵静电释放"></a>暗影精灵静电释放</h1><ol><li>先关机</li><li>按住windows+v键</li><li>按住上面按键的同时，不松开，再按电源按钮,都按住不放2-3秒</li><li>松开全部按键</li><li>看机器开机是否有提示502，是的话表示操作成功6. 重启电脑*次</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;暗影精灵静电释放&quot;&gt;&lt;a href=&quot;#暗影精灵静电释放&quot; class=&quot;headerlink&quot; title=&quot;暗影精灵静电释放&quot;&gt;&lt;/a&gt;暗影精灵静电释放&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;先关机&lt;/li&gt;
+&lt;li&gt;按住windows+v键&lt;/li&gt;
+&lt;li&gt;按住上面按
+      
+    
+    </summary>
+    
+      <category term="PC" scheme="https://smaxad47.github.io/categories/PC/"/>
+    
+      <category term="其他" scheme="https://smaxad47.github.io/categories/PC/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="PC" scheme="https://smaxad47.github.io/tags/PC/"/>
+    
+      <category term="笔记本" scheme="https://smaxad47.github.io/tags/%E7%AC%94%E8%AE%B0%E6%9C%AC/"/>
+    
+      <category term="电源故障" scheme="https://smaxad47.github.io/tags/%E7%94%B5%E6%BA%90%E6%95%85%E9%9A%9C/"/>
     
   </entry>
   
