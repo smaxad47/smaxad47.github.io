@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://smaxad47.github.io/"/>
-  <updated>2019-07-09T03:19:22.258Z</updated>
+  <updated>2019-07-13T02:05:20.239Z</updated>
   <id>https://smaxad47.github.io/</id>
   
   <author>
@@ -15,6 +15,140 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FRP</title>
+    <link href="https://smaxad47.github.io/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/FRP/"/>
+    <id>https://smaxad47.github.io/wiki/服务器/FRP/</id>
+    <published>2019-07-12T16:00:00.000Z</published>
+    <updated>2019-07-13T02:05:20.239Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">github/frp</a><br>下载对应版本<br>解压配置权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf XXX.tar.gz</span><br><span class="line">chmod +x XXX</span><br></pre></td></tr></table></figure><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>详细配置可以参考文件目录下的<code>frps_full.ini</code>和<code>frpc_full.ini</code></p><h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>可以使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./frps -c frps.ini</span><br><span class="line">./frpc -c frpc.ini</span><br></pre></td></tr></table></figure><p>来前台运行<br><del>后台运行可以使用nohup</del></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup /home/XXX/frp/frps -c /home/XXX/frp/frps.ini &amp;</span><br><span class="line">nohup /home/XXX/frp/frpc -c /home/XXX/frp/frpc.ini &amp;</span><br></pre></td></tr></table></figure><p>暂时有些问题，可以用tmux来运行</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/fatedier/frp&quot; target=&quot;_blank&quot; rel=&quot;noopene
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://smaxad47.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="FRP" scheme="https://smaxad47.github.io/tags/FRP/"/>
+    
+      <category term="内网穿透，服务器" scheme="https://smaxad47.github.io/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%EF%BC%8C%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nextcloud</title>
+    <link href="https://smaxad47.github.io/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/nextcloud-snap/"/>
+    <id>https://smaxad47.github.io/wiki/服务器/nextcloud-snap/</id>
+    <published>2019-07-12T16:00:00.000Z</published>
+    <updated>2019-07-13T02:06:12.356Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo snap install nextcloud</span><br></pre></td></tr></table></figure><p>登录并完成安装</p><h1 id="将存储位置挪到外部硬盘"><a href="#将存储位置挪到外部硬盘" class="headerlink" title="将存储位置挪到外部硬盘"></a>将存储位置挪到外部硬盘</h1><ol><li><p>挂载EXT4硬盘，如<code>/media/name/XXXDATA</code></p></li><li><p>可以在里面新建一个文件夹用来存放就可以不用看到<code>lost&amp;found</code>了，如<code>/media/name/XXXDATA/mydata</code></p></li><li><p>将nextcloud设置为可移动媒体:<code>sudo snap connect nextcloud:removable-media</code></p></li><li><p>修改默认nextcloud默认储存位置<code>sudo nvim /var/snap/nextcloud/current/nextcloud/config/config.php</code><br>修改内容:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原内容:</span><br><span class="line">&apos;datadirectory&apos; =&gt; &apos;/var/snap/nextcloud/common/nextcloud/data&apos;</span><br><span class="line">改为:</span><br><span class="line">&apos;datadirectory&apos; =&gt; &apos;/media/name/XXXDATA/mydata&apos;</span><br></pre></td></tr></table></figure></li><li><p>关闭nextcloud,<code>sudo snap disable nextcloud</code><br>移动数据目录<code>sudo cp -r /var/snap/nextcloud/common/nextcloud/data/. /media/name/XXXDATA/mydata</code></p></li><li><p>打开nextcloud，<code>sudo snap enable nextcloud</code></p></li><li><p>可能会遇到的问题，没有权限或者权限太开放，将mydata的所有者改为root:<code>sudo chown root:root mydata</code></p></li></ol><h1 id="添加可信任域名"><a href="#添加可信任域名" class="headerlink" title="添加可信任域名"></a>添加可信任域名</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">array (</span><br><span class="line">    0 =&gt; &apos;192.168.1.100&apos;,</span><br><span class="line">    1 =&gt; &apos;domain&apos;</span><br><span class="line">  )</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span 
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://smaxad47.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Nextcloud" scheme="https://smaxad47.github.io/tags/Nextcloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Caddy</title>
+    <link href="https://smaxad47.github.io/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/Caddy/"/>
+    <id>https://smaxad47.github.io/wiki/服务器/Caddy/</id>
+    <published>2019-07-12T16:00:00.000Z</published>
+    <updated>2019-07-13T02:06:26.902Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>用逗的脚本</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</span><br><span class="line"> # 安装插件：</span><br><span class="line"> bash caddy_install.sh xxx,xxx</span><br><span class="line">  # 例如同时安装 http.filemanager 和 http.webdav插件：</span><br><span class="line">  bash caddy_install.sh http.filemanager,http.webdav</span><br><span class="line">  # 插件和Caddy是集成在一起的(单个二进制文件)，多个插件必须同时安装。</span><br><span class="line"># 卸载命令：</span><br><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; caddy_install.sh uninstall</span><br></pre></td></tr></table></figure><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>创建配置文件<code>/usr/local/caddy/Caddyfile</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;用逗的脚本&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://smaxad47.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="Caddy.服务器" scheme="https://smaxad47.github.io/tags/Caddy-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派</title>
+    <link href="https://smaxad47.github.io/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/%E6%A0%91%E8%8E%93%E6%B4%BE-ubuntu-mate/"/>
+    <id>https://smaxad47.github.io/wiki/服务器/树莓派-ubuntu-mate/</id>
+    <published>2019-07-12T16:00:00.000Z</published>
+    <updated>2019-07-13T02:06:09.531Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h1 id="配置源"><a href="#配置源" class="headerlink" title="配置源"></a>配置源</h1><p>腾讯源</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-updates main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-security main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.cloud.tencent.com/ubuntu-ports/ bionic-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure><h1 id="Oh-my-zsh及主题"><a href="#Oh-my-zsh及主题" class="headerlink" title="Oh-my-zsh及主题"></a>Oh-my-zsh及主题</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br><span class="line">sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</span><br></pre></td></tr></table></figure><p>##主题修改</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/denysdovhan/spaceship-prompt.git &quot;$ZSH_CUSTOM/themes/spaceship-prompt&quot;</span><br><span class="line">ln -s &quot;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&quot; &quot;$ZSH_CUSTOM/themes/spaceship.zsh-theme&quot;</span><br></pre></td></tr></table></figure><p>Set ZSH_THEME=”spaceship” in your .zshrc</p><h2 id="其他插件"><a href="#其他插件" class="headerlink" title="其他插件"></a>其他插件</h2><h1 id="nvim及配置"><a href="#nvim及配置" class="headerlink" title="nvim及配置"></a>nvim及配置</h1><h2 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install software-properties-common (可能需要)</span><br><span class="line">sudo add-apt-repository ppa:neovim-ppa/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install neovim</span><br><span class="line">sudo apt-get install python-dev python-pip python3-dev python3-pip</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><code>sh -c &quot;$(curl -fsSL https://git.io/vwRKI)&quot;</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;h1 id=&quot;配置源&quot;&gt;&lt;a href=&quot;#配置源&quot; class=&quot;headerlink&quot; title=&quot;配置源&quot;&gt;&lt;/a&gt;配置源&lt;/h1&gt;&lt;p
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://smaxad47.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="树莓派" scheme="https://smaxad47.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="Ubuntu" scheme="https://smaxad47.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nextcloud内网穿透</title>
+    <link href="https://smaxad47.github.io/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8/nextcloud-caddy-frp/"/>
+    <id>https://smaxad47.github.io/wiki/服务器/nextcloud-caddy-frp/</id>
+    <published>2019-07-12T16:00:00.000Z</published>
+    <updated>2019-07-13T02:07:10.917Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>安装参考<br><a href="/wiki/服务器/Caddy">Caddy</a><br><a href="/wiki/服务器/FRP">FRP</a><br><a href="/wiki/服务器/nextcloud-snap">Nextcloud</a></p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="Caddy"><a href="#Caddy" class="headerlink" title="Caddy"></a>Caddy</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">domain &#123;</span><br><span class="line">   tls XXX@XXX.com</span><br><span class="line">   proxy / localhost:porta &#123;</span><br><span class="line">   transparent</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><p><em>transparent</em>等价于</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">header_upstream Host &#123;host&#125;</span><br><span class="line">header_upstream X-Real-IP &#123;remote&#125;</span><br><span class="line">header_upstream X-Forwarded-For &#123;remote&#125;</span><br><span class="line">header_upstream X-Forwarded-Proto &#123;scheme&#125;</span><br></pre></td></tr></table></figure><p><em>备注:</em>port为frp中vhost_http_port设置的端口</p><h2 id="FRP"><a href="#FRP" class="headerlink" title="FRP"></a>FRP</h2><p><em>服务端</em>配置:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">#自选frp通信端口，客户端和服务端保持一致</span><br><span class="line">bind_port = port</span><br><span class="line"></span><br><span class="line"># 设定超时时间，可选</span><br><span class="line">authentication_timeout = 900</span><br><span class="line"></span><br><span class="line"># FRP后台地址和帐号密码，可选</span><br><span class="line">dashboard_port = portb</span><br><span class="line">dashboard_user = account</span><br><span class="line">dashboard_pwd = passwd</span><br><span class="line"></span><br><span class="line"># 访问内网网站的端口地址</span><br><span class="line">vhost_http_port = porta</span><br><span class="line"></span><br><span class="line"># 访问端口的范围</span><br><span class="line">privilege_mode = true</span><br><span class="line">privilege_token = passwdx</span><br><span class="line">privilege_allow_ports = portx-porty</span><br></pre></td></tr></table></figure><p><em>客户端</em>配置:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"># 和服务端保持一致</span><br><span class="line">server_addr = server_ip</span><br><span class="line">server_port = port</span><br><span class="line">privilege_token = passwdx</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">privilege_mode = true</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = domain</span><br><span class="line"># 这两是加密 http用一下</span><br><span class="line">use_encryption = true</span><br><span class="line">use_compression = true</span><br></pre></td></tr></table></figure><h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h1&gt;&lt;p&gt;安装参考&lt;br&gt;&lt;a href=&quot;/wiki/服务器/Caddy&quot;&gt;Caddy&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;/wiki/服务器/FRP&quot;
+      
+    
+    </summary>
+    
+      <category term="服务器" scheme="https://smaxad47.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="FRP" scheme="https://smaxad47.github.io/tags/FRP/"/>
+    
+      <category term="Nextcloud" scheme="https://smaxad47.github.io/tags/Nextcloud/"/>
+    
+      <category term="Caddy" scheme="https://smaxad47.github.io/tags/Caddy/"/>
+    
+  </entry>
   
   <entry>
     <title>Essential Phone OTA With ROOT</title>
