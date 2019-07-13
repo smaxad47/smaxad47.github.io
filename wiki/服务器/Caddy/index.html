@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="安装用逗的脚本 12345678wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;amp;&amp;amp; chmod +x caddy_install.sh &amp;amp;&amp;amp; bash caddy_install.sh # 安装插件：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-13T02:06:26.902Z">
+<meta property="og:updated_time" content="2019-07-13T08:11:45.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Caddy">
 <meta name="twitter:description" content="安装用逗的脚本 12345678wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;amp;&amp;amp; chmod +x caddy_install.sh &amp;amp;&amp;amp; bash caddy_install.sh # 安装插件：">
@@ -194,7 +194,7 @@
                             &nbsp;
                             服务器
                         </a>
-                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/服务器/FRP/">FRP</a></li>  <li class="file"><a href="/wiki/服务器/nextcloud-snap/">Nextcloud</a></li>  <li class="file active"><a href="/wiki/服务器/Caddy/">Caddy</a></li>  <li class="file"><a href="/wiki/服务器/树莓派-ubuntu-mate/">树莓派</a></li>  <li class="file"><a href="/wiki/服务器/nextcloud-caddy-frp/">Nextcloud内网穿透</a></li>  </ul> 
+                         <ul class="unstyled" id="tree">  <li class="file"><a href="/wiki/服务器/FRP/">FRP</a></li>  <li class="file"><a href="/wiki/服务器/nextcloud-snap/">Nextcloud</a></li>  <li class="file"><a href="/wiki/服务器/树莓派-ubuntu-mate/">树莓派</a></li>  <li class="file"><a href="/wiki/服务器/nextcloud-caddy-frp/">Nextcloud内网穿透</a></li>  <li class="file active"><a href="/wiki/服务器/Caddy/">Caddy</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/wiki/index/"></a></li>  </ul> 
     </div>
@@ -331,7 +331,7 @@
             <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>用逗的脚本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh</span><br><span class="line"> # 安装插件：</span><br><span class="line"> bash caddy_install.sh xxx,xxx</span><br><span class="line">  # 例如同时安装 http.filemanager 和 http.webdav插件：</span><br><span class="line">  bash caddy_install.sh http.filemanager,http.webdav</span><br><span class="line">  # 插件和Caddy是集成在一起的(单个二进制文件)，多个插件必须同时安装。</span><br><span class="line"># 卸载命令：</span><br><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; caddy_install.sh uninstall</span><br></pre></td></tr></table></figure>
 
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>创建配置文件<code>/usr/local/caddy/Caddyfile</code></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>创建配置文件<code>/usr/local/caddy/Caddyfile</code><br>自动申请证书位置<code>/.caddy/acme/acme-v01.api.letsencrypt.org/sites/xxx.xxx(域名)/</code></p>
 
             </div>
         
@@ -344,19 +344,19 @@
     
 <nav id="article-nav">
     
-        <a href="/wiki/服务器/nextcloud-snap/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/wiki/服务器/nextcloud-caddy-frp/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    Nextcloud
+                    Nextcloud内网穿透
                 
             </div>
         </a>
     
     
-        <a href="/wiki/服务器/树莓派-ubuntu-mate/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/wiki/Android/Essential Phone OTA With ROOT/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">树莓派</div>
+            <div class="article-nav-title">Essential Phone OTA With ROOT</div>
         </a>
     
 </nav>
