@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     
-    <title>Nextcloud内网穿透 | Hexo</title>
+    <title>Nextcloud内网穿透 | 花窝</title>
     
     
         <meta name="keywords" content="FRP,Nextcloud,Caddy">
@@ -14,17 +14,17 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nextcloud内网穿透">
 <meta property="og:url" content="https://smaxad47.github.io/wiki/服务器/nextcloud-caddy-frp/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="花窝">
 <meta property="og:description" content="安装安装参考CaddyFRPNextcloud 配置Caddy12345domain &amp;#123;   proxy / localhost:porta &amp;#123;   transparent   &amp;#125; &amp;#125;  transparent等价于 1234header_upstream Host &amp;#123;host&amp;#125;header_upstream X-Real-IP &amp;#12">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-13T07:14:54.727Z">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-07-15T01:14:05.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nextcloud内网穿透">
 <meta name="twitter:description" content="安装安装参考CaddyFRPNextcloud 配置Caddy12345domain &amp;#123;   proxy / localhost:porta &amp;#123;   transparent   &amp;#125; &amp;#125;  transparent等价于 1234header_upstream Host &amp;#123;host&amp;#125;header_upstream X-Real-IP &amp;#12">
     
 
     
-        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="花窝" type="application/atom+xml">
     
 
     
@@ -62,7 +62,7 @@
         <div class="outer">
             <a href="/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">Hexo</span>
+                <span class="site-title">花窝</span>
             </a>
             <nav id="main-nav">
                 
@@ -301,13 +301,13 @@
                         
                         
                             <div class="article-meta-button">
-                                <a href="https://github.com/smaxad47/Wiki-site/raw/writing/source/_posts/服务器/nextcloud-caddy-frp.md"> Source </a>
+                                <a href="https://github.com/smaxad47/smaxad47.github.io/raw/master/source/_posts/服务器/nextcloud-caddy-frp.md"> Source </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href="https://github.com/smaxad47/Wiki-site/edit/writing/source/_posts/服务器/nextcloud-caddy-frp.md"> Edit </a>
+                                <a href="https://github.com/smaxad47/smaxad47.github.io/edit/master/source/_posts/服务器/nextcloud-caddy-frp.md"> Edit </a>
                             </div>
                             <div class="article-meta-button">
-                                <a href="https://github.com/smaxad47/Wiki-site/commits/writing/source/_posts/服务器/nextcloud-caddy-frp.md"> History </a>
+                                <a href="https://github.com/smaxad47/smaxad47.github.io/commits/master/source/_posts/服务器/nextcloud-caddy-frp.md"> History </a>
                             </div>
                         
                     </div>
@@ -341,7 +341,10 @@
 <p><em>客户端</em>配置:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line"># 和服务端保持一致</span><br><span class="line">server_addr = server_ip</span><br><span class="line">server_port = port</span><br><span class="line">privilege_token = passwdx</span><br><span class="line"></span><br><span class="line">[web]</span><br><span class="line">privilege_mode = true</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = domain</span><br><span class="line"># 这是加密</span><br><span class="line">use_encryption = true</span><br><span class="line"># 这是压缩</span><br><span class="line">use_compression = true</span><br></pre></td></tr></table></figure>
 
-<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1>
+<h1 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h1><p>用FRP穿透HTTP 和 HTTPS 80 443端口<br>用sudo nextcloud.enable-https lets-encrypt获取证书</p>
+<p>由于Caddy并不支持<code>proxy_ssl_server_name</code><br>直接使用<a href="https://domain:port" target="_blank" rel="noopener">https://domain:port</a> 来访问</p>
+<p>FRP 配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">FRP 配置如下:</span><br><span class="line">server:</span><br><span class="line">[common]</span><br><span class="line">bind_port = porta</span><br><span class="line">vhost_https_port = portb</span><br><span class="line">authentication_timeout = 900</span><br><span class="line">token = xxxxxxxx</span><br><span class="line"></span><br><span class="line">client:</span><br><span class="line">[common]</span><br><span class="line">server_addr = server_ip</span><br><span class="line">server_port = porta</span><br><span class="line">token = xxxxxxxx</span><br><span class="line"></span><br><span class="line">[web443]</span><br><span class="line">type = https</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 443</span><br><span class="line">custom_domains = domain</span><br><span class="line">use_encryption = true</span><br><span class="line"></span><br><span class="line">[web6800]</span><br><span class="line">type = https</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 6800</span><br><span class="line">custom_domains = domain</span><br><span class="line">use_encryption = true</span><br></pre></td></tr></table></figure>
             </div>
         
         <footer class="article-footer">
@@ -389,7 +392,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            John Doe &copy; 2019 
+            Edward &copy; 2019 
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"></a>
             <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
             
