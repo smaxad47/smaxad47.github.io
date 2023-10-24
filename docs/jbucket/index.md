@@ -1,3 +1,4 @@
-# jbucket
-## 鸡盒友链
-[鸡盒MEME](https://meme.epyso.org/)
+# 麦趣鸡盒
+## 友链
+[鸡盒游戏桶](https://jbucket.epyso.org/)
+[牙医后宫团MEME](https://meme.epyso.org)

@@ -1,12 +1,15 @@
 site_name: 孤独堡垒
 theme:
   name: material
+  # custom_dir: overrides
   language: zh
   logo: 'images/logo.jpg'
   favicon: images/logo.jpg
   palette:
       primary: "black"
       accent: "deep orange"
+  features:
+    - navigation.tabs
 plugins:
   - blog
 
