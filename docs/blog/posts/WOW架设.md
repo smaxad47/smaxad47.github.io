@@ -6,6 +6,7 @@ authors:
 categories:
   - Game
 ---
+
 # WOW架设教程记录
 私服架设指南,相关推荐网站:  
 [UIWOW](https://uiwow.com/)
@@ -17,12 +18,13 @@ categories:
 
 ## 所需要的东西
 包含所有开服所需的东西,单机并不一定全需要:  
-1. Mysql5.5+ (或MariaDB)
-2. 7.0 < PHP < 8.0
-3. Nginx (或者Caddy或者自己喜欢的)
-4. HeidiSql (或者NaviCat或者自己喜欢的)
-5. [WoWSimpleRegistration](https://github.com/masterking32/WoWSimpleRegistration)
-6. [azerothcore](https://github.com/azerothcore/azerothcore-wotlk)
+
+1. Mysql5.5+ (或MariaDB)  
+2. 7.0 < PHP < 8.0  
+3. Nginx (或者Caddy或者自己喜欢的)  
+4. HeidiSql (或者NaviCat或者自己喜欢的)  
+5. [WoWSimpleRegistration](https://github.com/masterking32/WoWSimpleRegistration)  
+6. [azerothcore](https://github.com/azerothcore/azerothcore-wotlk)  
 
 ## 编译流程
 **建议跳过!**  
@@ -47,29 +49,29 @@ categories:
 3. 修改```acore_auth```库中的```realmlist```表,修改```address```字段为服务器的外网地址,```name```字段可选修改.
 
 4. 编辑Caddyfile:  
-    ```
-    :8999 {
-      root * C:/www
-      php_fastcgi 127.0.0.1:9000
-      file_server
-    }
-    ```
-    克隆[WoWSimpleRegistration](https://github.com/masterking32/WoWSimpleRegistration)库至C盘www目录下,并且编辑```application/config/config.php.sample```,去掉```.sample```,根据实际情况配置该文件内容  
-    运行Caddy,终端使用命令```caddy.exe run --config path/Caddyfile```  
+```
+:8999 {
+  root * C:/www
+  php_fastcgi 127.0.0.1:9000
+  file_server
+}
+```
+克隆[WoWSimpleRegistration](https://github.com/masterking3WoWSimpleRegistration)库至C盘www目录下,并且编辑```application/config/confiphp.sample```,去掉```.sample```,根据实际情况配置该文件内容  
+运行Caddy,终端使用命令```caddy.exe run --config path/Caddyfile```  
 
 5. 编辑PHP.ini,启用插件:  
-    ```
-    extension=gd2
-    extension=gmp
-    extension=mbstring
-    extension=openssl
-    extension=pdo_mysql
-    extension=pdo_odbc
-    extension=pdo_pgsql
-    extension=pdo_sqlite
-    extension=soap
-    ```
-    运行PHP,终端使用命令```php-cgi.exe -b 127.0.0.1:9000 -c php.ini```
+```
+extension=gd2
+extension=gmp
+extension=mbstring
+extension=openssl
+extension=pdo_mysql
+extension=pdo_odbc
+extension=pdo_pgsql
+extension=pdo_sqlite
+extension=soap
+```
+运行PHP,终端使用命令```php-cgi.exe -b 127.0.0.1:9000 -c php.ini```
 
 6. 客户端修改```Config.wtf```文件,添加内容```SET realmList "服务器IP地址"```,请根据实际情况修改,默认端口不需要添加端口,如果在```authserver.exe```修改过监听端口,客户端需要对应更改,如果```Config.wtf```文件不存在,可以手动创建,该文件一般位置在```WTF```下.
 
