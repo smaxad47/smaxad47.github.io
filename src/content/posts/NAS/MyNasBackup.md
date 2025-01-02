@@ -1,6 +1,6 @@
 ---
 title: 天宝AMD300U AIO
-published: 2025-1-2
+published: 2025-01-02
 description: "自用AIO使用备用"
 tags: ["Nas","IstoreOS","KVM"]
 category: 'Home'
