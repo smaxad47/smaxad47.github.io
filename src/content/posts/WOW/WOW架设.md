@@ -1,10 +1,10 @@
 ---
-draft: false 
-date: 2023-12-29
-authors:
-  - smaxad47
-categories:
-  - Game
+title: WOW335架设教程
+published: 2023-12-29
+description: "WOW335架设教程,带注册页"
+tags: ["Game","private server"]
+category: 'Game'
+draft: false
 ---
 
 # WOW架设教程记录
