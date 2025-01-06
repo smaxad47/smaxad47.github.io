@@ -63,6 +63,11 @@ export const profileConfig: ProfileConfig = {
     //   url: 'https://twitter.com',
     // },
     {
+      name: 'Xbox',
+      icon: 'fa6-brands:xbox',
+      url: 'https://www.xbox.com/play/user/Jackdaw7156',
+    },
+    {
       name: 'Steam',
       icon: 'fa6-brands:steam',
       url: 'https://steamcommunity.com/profiles/76561198047885836/',
