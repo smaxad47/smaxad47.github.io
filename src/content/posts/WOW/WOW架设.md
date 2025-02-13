@@ -9,7 +9,7 @@ draft: false
 
 # WOW架设教程记录
 私服架设指南,相关推荐网站:  
-[UIWOW](https://uiwow.com/)
+[UIWOW](https://uiwow.com/)  
 [狮王游戏论坛](http://bbs.yxlyy.club/)
 <!-- more -->
 
