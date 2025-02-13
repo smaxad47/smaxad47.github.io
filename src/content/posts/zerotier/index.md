@@ -1,6 +1,6 @@
 ---
 title: Zerotier 自建Moon
-published: 2025-2-13
+published: 2025-02-13
 description: "UDP被ISP QOS,打洞直连速度非常不理想,自建Moon中转"
 tags: ["Zerotier", "网络通信"]
 category: '组网'
