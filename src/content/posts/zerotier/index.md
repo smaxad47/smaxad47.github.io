@@ -84,3 +84,15 @@ zerotier-cli listpeers
 zerotier-cli peers
 ```
 看到Moon,IP是服务器的地址就是生效了.
+
+## Openwrt
+使用OP类系统,如IStoreos,进入命令会遇到一些问题.
+```
+zerotier-cli listpeers
+>> zerotier-cli: missing port and zerotier-one.port not found in /var/lib/zerotier-one
+```
+解决方法:
+```
+mkdir /var/lib/zerotier-one
+mount -o bind  /var/lib/zerotier-luci /var/lib/zerotier-one
+```
