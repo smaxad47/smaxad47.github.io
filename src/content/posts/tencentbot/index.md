@@ -7,8 +7,6 @@ category: 'Home'
 draft: false
 ---
 
-<img src="./1.png" width = "305" height = "411" alt="NapCat" align=right />
-
 # 准备
 * 本人目前设备,一只树莓派4,一只树莓派3,一台AMD300U的主机,一只R2S.
 * 建议至少需要一台N100以上的迷你主机作为家庭中枢(推荐使用Linux),准系统一般价格在500上下,内存请加至至少16G,硬盘尽可能大,需要做虚拟机.
@@ -42,11 +40,10 @@ NapCat 配置文件路径: /app/napcat/config
 ---
 
 * Web界面:
-<img src="./2.png" height = "600">
-
+![](./2.png)  
 ## 配置NapCat
 * 登录NapCat后,选择网络配置
-<img src="./3.png" height = "600">
+![](./3.png) 
 
 * 选择新建,新建WebSocket客户端,新增三个配置(后两个可之后再添加,目前只使用AstrBot)
     AstrBot:
@@ -114,34 +111,34 @@ NapCat 配置文件路径: /app/napcat/config
 
 ## 配置AstrBot
 * 登录AstrBot的Web控制台.
-    <img src="./bot1.png" height = "600">
+    ![](./bot1.png) 
 
 * 点击消息平台,点击右边新增适配器,选择aiocqhttp(OneBotv11).
-    <img src="./bot2.png" height = "600">
+    ![](./bot2.png) 
 
 * 保持默认,选择保存.
-    <img src="./bot3.png" height = "600">
+    ![](./bot3.png) 
 
 * 展开平台日志,对登录的QQ发起消息,若在日志中看到你发的消息则表示部署成功了.
-    <img src="./bot4.png" height = "600" width = "auto">
+    ![](./bot4.png) 
 
 
 # 配置第一个免费的模型
 [讯飞星火](https://xinghuo.xfyun.cn/)是当前不多的可以有免费tokens的模型.
-<img src="./sp1.png" height = "300">
+![](./sp1.png) 
 
 * 登录AstrBot的Web控制台.
 * 选择服务提供商,右边点击新增服务供应商.
-<img src="./sp2.png" height = "600">
+![](./sp2.png) 
 
 * 选择OpenAI,从[星火控制台](https://console.xfyun.cn/services/bmx1)及[星火文档](https://www.xfyun.cn/doc/spark/X1http.html)获得链接地址以及APIPassword,填入API Base URL (api_base)及API Key (key),模型名称填x1,保存.
-<img src="./sp3.png" height = "600">
+![](./sp3.png) 
 
 * 在供应商可用性右边点击**刷新状态**,等待出现可用.
-<img src="./sp4.png">
+![](./sp4.png) 
 
 * 此时,对机器人qq发送消息,则会使用模型回复消息.
-<img src="./sp5.png">
+![](./sp5.png) 
 
 * 在AstrBot的Web控制台选择配置文件,则可以对使用模型进行详细的调整.
-<img src="./sp6.png" height = "600">
+![](./sp6.png) 
