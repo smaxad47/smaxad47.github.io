@@ -52,8 +52,8 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Edward',
-  bio: '第四版博客,2025',
+  name: 'Wright',
+  bio: '记录折腾过的古怪东西.',
   links: [
     // {
     //   name: 'Twitter',
@@ -76,6 +76,16 @@ export const profileConfig: ProfileConfig = {
       name: 'GitHub',
       icon: 'fa6-brands:github',
       url: 'https://github.com/smaxad47',
+    },
+    {
+      name: 'QQ',
+      icon: 'fa6-brands:qq',
+      url: 'https://qm.qq.com/q/jXKWvcTJ1C',
+    },
+    {
+      name: 'Mail',
+      icon: 'material-symbols:mail-outline-rounded',
+      url: 'mailto:315451609@qq.com',
     },
   ],
 }
