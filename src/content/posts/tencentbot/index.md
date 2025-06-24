@@ -1,7 +1,7 @@
 ---
-title: 机器人,实现你的贾维斯(一)
+title: 家庭智能中心,实现属于你自己的AI管家(一)
 published: 2025-06-22
-description: "本教程最终将实现你家庭的全部联动,QQ、微信、华为智能家居、小米智能家居、美的智能家居、OPENWRT等等,并接入大模型实现你自己的贾维斯管家."
+description: "本教程最终将实现你家庭的全部联动,QQ、微信、华为智能家居、小米智能家居、美的智能家居、OPENWRT等等,并接入大模型实现你自己的AI管家,最终接入实体设备让变成机械AI管家."
 tags: ["bot", "AI"]
 category: 'Home'
 draft: false
@@ -32,20 +32,20 @@ sudo docker run -d \
     --restart=always \
     mlikiowa/napcat-docker:latest
 ```
-QQ 持久化数据路径：/app/.config/QQ
-NapCat 配置文件路径: /app/napcat/config
-登录 WebUI 地址：http://<宿主机ip>:6099/webui
+QQ 持久化数据路径：/app/.config/QQ  
+NapCat 配置文件路径: /app/napcat/config  
+登录 WebUI 地址：http://<宿主机ip>:6099/webui  
 [其他安装方法](https://napneko.github.io/guide/boot/Shell)
 
 ---
 
-* Web界面:
+* 登录Web界面:
 ![](./2.png)  
 ## 配置NapCat
 * 登录NapCat后,选择网络配置
 ![](./3.png) 
 
-* 选择新建,新建WebSocket客户端,新增三个配置(后两个可之后再添加,目前只使用AstrBot)
+* 选择新建,新建WebSocket客户端,新增三个配置(后两个可之后再添加,目前只使用AstrBot)  
     AstrBot:
     ```
     ws://宿主机IP:6199/ws
@@ -64,7 +64,7 @@ NapCat 配置文件路径: /app/napcat/config
 
 ## 安装AstrBot
 + Bot框架个人一般不使用docker安装,docker相比直接部署起来修改起来比较麻烦.
-    - docker安装:
+    - **docker安装**:
         ```
         sudo docker run -itd -p 6180-6200:6180-6200 \
          -p 11451:11451 \
@@ -77,7 +77,7 @@ NapCat 配置文件路径: /app/napcat/config
         ```
         持久化数据路径: /AstrBot/data
     
-    - 手动部署:
+    - **手动部署**:
         * (可选,推荐)安装uv,使用你喜欢的下载器.
             ```
             curl -LsSf https://astral.sh/uv/install.sh | sh
